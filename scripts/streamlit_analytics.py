@@ -93,7 +93,7 @@ fig_exp = px.bar(
     title="Brand Exposure Time (Seconds)",
     labels={"exposure_sec": "Seconds"}
 )
-col1.plotly_chart(fig_exp, use_container_width=True)
+col1.plotly_chart(fig_exp, width="stretch")
 
 fig_area = px.bar(
     brand_summary,
@@ -102,7 +102,7 @@ fig_area = px.bar(
     title="Brand Screen Dominance (Total Box Area)",
     labels={"total_area": "Pixel Area"}
 )
-col2.plotly_chart(fig_area, use_container_width=True)
+col2.plotly_chart(fig_area, width="stretch")
 
 fig_conf = px.box(
     filtered_df,
@@ -110,7 +110,7 @@ fig_conf = px.box(
     y="confidence",
     title="Confidence Distribution by Brand"
 )
-st.plotly_chart(fig_conf, use_container_width=True)
+st.plotly_chart(fig_conf, width="stretch")
 
 fig_time = px.scatter(
     filtered_df,
@@ -121,7 +121,7 @@ fig_time = px.scatter(
     title="Brand Detection Timeline",
     labels={"timestamp": "Time (sec)"}
 )
-st.plotly_chart(fig_time, use_container_width=True)
+st.plotly_chart(fig_time, width="stretch")
 
 fig_heat = px.scatter(
     filtered_df,
@@ -132,7 +132,7 @@ fig_heat = px.scatter(
     title="Viewer Attention Zones",
     labels={"center_x": "Screen X", "center_y": "Screen Y"}
 )
-st.plotly_chart(fig_heat, use_container_width=True)
+st.plotly_chart(fig_heat, width="stretch")
 
 streak_df = longest_streak(filtered_df, FPS)
 fig_streak = px.bar(
@@ -141,7 +141,7 @@ fig_streak = px.bar(
     y="longest_streak_sec",
     title="Longest Continuous Visibility (Seconds)"
 )
-st.plotly_chart(fig_streak, use_container_width=True)
+st.plotly_chart(fig_streak, width="stretch")
 
 total_exposure_all = brand_summary["exposure_sec"].sum()
 brand_summary["fair_share_pct"] = (
@@ -155,7 +155,7 @@ fig_share = px.pie(
     values="fair_share_pct",
     title="Brand Fair Share (%)"
 )
-st.plotly_chart(fig_share, use_container_width=True)
+st.plotly_chart(fig_share, width="stretch")
 
 peak_moments = (
     filtered_df
@@ -166,7 +166,7 @@ peak_moments = (
 )
 
 st.subheader("Peak Brand Impact Moments")
-st.dataframe(peak_moments, use_container_width=True)
+st.dataframe(peak_moments, width="stretch")
 
 with st.expander("Show raw detection data"):
-    st.dataframe(filtered_df, use_container_width=True)
+    st.dataframe(filtered_df, width="stretch")
