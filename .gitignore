@@ -1,12 +1,3 @@
 /venv
 .DS_Store
-outputs/
 dataset/images/**/*.jpg
-dataset/images/**/*.jpeg
-dataset/images/**/*.png
-dataset/images/**/*.gif
-dataset/images/**/*.bmp
-dataset/images/**/*.tif
-dataset/images/**/*.tiff
-dataset/images/**/*.webp
-dataset/images/**/*.svg
