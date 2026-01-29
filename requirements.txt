@@ -1,0 +1,9 @@
+numpy
+opencv-python
+pandas
+supervision
+torch
+yolov5
+yt-dlp
+streamlit
+plotly
